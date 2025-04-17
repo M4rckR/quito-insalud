@@ -8,6 +8,14 @@
   /* Colors */
   --color-in-textbase: #23242A;
   --color-in-blue: #004569;
-  --color-in-cyan: #00BEB4;
+  --color-in-cyan-text: #00BEB4;
+
+  /* Gradient */
+  --color-in-cyan: #d6f5f1;
 }
 
+
+body {
+  @apply font-in-poppins;
+  @apply text-in-textbase;
+}
