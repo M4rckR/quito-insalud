@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-in-nunito : 'Nunito', sans-serif;
+  --font-in-poppins: 'Poppins', sans-serif;
+
+  /* Colors */
+  --color-in-textbase: #23242A;
+  --color-in-blue: #004569;
+  --color-in-cyan: #00BEB4;
+}
+
