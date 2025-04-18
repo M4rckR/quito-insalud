@@ -1,3 +1,5 @@
+import { Link } from 'react-scroll';
+
 export const HeaderMain = () => {
   return (
     <div className="relative">
@@ -10,8 +12,14 @@ export const HeaderMain = () => {
             </div>
             <div>
                 <div className="font-in-nunito flex font-semibold text-lg text-in-blue gap-6 ">
-                    <p className="hidden md:block cursor-pointer hover:text-in-blue/65 transition-all duration-150 ease-in-out">Beneficios</p>
-                    <p className="hidden md:block cursor-pointer hover:text-in-blue/65 transition-all duration-150 ease-in-out">Preguntas frecuentes</p>
+                    <p className="hidden md:block cursor-pointer hover:text-in-blue/65 transition-all duration-150 ease-in-out">
+                            Beneficios
+                    </p>
+                    <p className="hidden md:block cursor-pointer hover:text-in-blue/65 transition-all duration-150 ease-in-out">
+                        <Link to="preguntas" smooth={true} duration={500}>
+                            Preguntas frecuentes
+                        </Link>
+                    </p>
                     <div className="flex gap-4">
                         <img className="w-6 sm:w-7 cursor-pointer" src="/icons/instagram.svg" alt="logo instagram" />
                         <img className="w-6 sm:w-7 cursor-pointer" src="/icons/tiktok.svg" alt="logo tiktok" />
