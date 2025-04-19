@@ -21,9 +21,9 @@ export const AccordionItem = ({title,children, isOpen, onToggle}:AccordionItemPr
       }, [isOpen]);
 
   return (
-    <div className="border-b border-in-cyan/30 bg-white shadow-lg px-6 py-3 rounded-md cursor-pointer">
+    <div className="border-b border-in-cyan/30 bg-white shadow-lg px-6 py-3 rounded-md">
     <button
-      className="w-full flex gap-4 items-center py-4 font-semibold text-in-blue "
+      className="w-full flex gap-4 items-center py-4 font-semibold text-in-blue cursor-pointer"
       onClick={onToggle}
     >
       <span
