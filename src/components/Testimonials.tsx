@@ -5,7 +5,7 @@ import "swiper/css/effect-fade";
 
 export const Testimonials = () => {
   return (
-    <section className="relative">
+    <section className="relative pt-16">
       <div className="container mx-auto px-4 max-w-[1440px] py-6 pb-16">
         <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text mb-4" data-aos="zoom-in">
           Testimonios que nos respaldan
