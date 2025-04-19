@@ -1,4 +1,4 @@
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player";
 
 export const InfoTreatment = () => {
   return (
@@ -17,6 +17,7 @@ export const InfoTreatment = () => {
                 className="react-player"
                 light={true}
                 playing={true}
+                
               />
               <img
                 data-aos="fade-right"

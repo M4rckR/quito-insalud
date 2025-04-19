@@ -16,7 +16,7 @@ export const Questions = () => {
 
       <div className='flex flex-col md:flex-row gap-6 rounded-lg lg:px-16'>
         <div className='flex flex-col flex-1/2 gap-6'>
-          <div data-aos="fade-right">
+          <div data-aos="fade-up" data-aos-duration="3000">
             <AccordionItem
                   title="¿Funciona para todos?"
                   isOpen={openIndex === 0}
@@ -25,7 +25,7 @@ export const Questions = () => {
                   Sí, la terapia de ondas de choque es efectiva en la gran mayoría de pacientes. Hombres de todas las edades han reportado mejoras en la calidad y duración de sus erecciones desde las primeras sesiones.
               </AccordionItem>
           </div>
-          <div data-aos="fade-right">
+          <div data-aos="fade-up" data-aos-duration="3000">
             <AccordionItem
                   title="¿El tratamiento duele?"
                   isOpen={openIndex === 1}
@@ -35,14 +35,7 @@ export const Questions = () => {
             </AccordionItem>
           </div>
 
-          
-            
-        </div>
-          
-
-
-        <div className='flex flex-col flex-1/2 gap-6'>
-          <div data-aos="fade-left">
+          <div data-aos="fade-up" data-aos-duration="3000">
             <AccordionItem
               title="¿Cuántas sesiones necesito?"
               isOpen={openIndex === 2}
@@ -50,25 +43,33 @@ export const Questions = () => {
             >
               Lo usual es entre 6 a 12 sesiones, según evaluación médica.
             </AccordionItem>
-          </div>
+          </div> 
           
-          <div data-aos="fade-left">
+            
+        </div>
+          
+
+
+        <div className='flex flex-col flex-1/2 gap-6'>
+
+          
+          <div data-aos="fade-up" data-aos-duration="3000">
             <AccordionItem
-              title="¿Es seguro?"
+              title="¿Cuántas sesiones necesito?"
               isOpen={openIndex === 3}
               onToggle={() => toggleIndex(3)}
             >
-              Sí, es un procedimiento no invasivo aprobado clínicamente.
+              Se recomienda llevar de 6 sesiones a más dependiendo del caso.
             </AccordionItem>
           </div>
           
-          <div data-aos="fade-left">
+          <div data-aos="fade-up" data-aos-duration="3000">
             <AccordionItem
-              title="¿Necesito receta médica?"
+              title="¿Necesito realizar algún examen previo?"
               isOpen={openIndex === 4}
               onToggle={() => toggleIndex(4)}
             >
-              No necesitas receta, pero sí una evaluación gratuita previa con nuestros especialistas.
+              Si, se recomienda realizarse una ecografía doppler de pene para obtener un mejor diagnóstico y poder planificar un mejor tratamiento.
             </AccordionItem>
           </div>
           

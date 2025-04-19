@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { benefits } from "../data/benefits";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css/navigation";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ export const Benefits = () => {
       </h2>
       <div className="relative overflow-visible ">
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           spaceBetween={16}
           onReachBeginning={() => setAtStart(true)}
           onFromEdge={() => {
@@ -41,6 +41,11 @@ export const Benefits = () => {
             nextEl: ".benefits-button-next",
             prevEl: ".benefits-button-prev",
           }}
+          autoplay = {{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          speed={800}
           className="overflow-visible"
         >
           {benefits.map((benefit) => (

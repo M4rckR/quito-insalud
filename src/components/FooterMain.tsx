@@ -6,7 +6,7 @@ export const FooterMain = () => {
             <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 lg:gap-24 text-in-blue md:mb-12 text-center md:text-left">
                 <section className="flex flex-col gap-2 md:gap-0 justify-center md:flex-1/3"> 
                     <img className="w-48 mx-auto pb-4 md:pb-6 md:mx-0" src="/logos/logo-insalud.png" alt="logo insalud" />
-                    <p className="font-semibold capitalize max-w-[440px] md:text-lg md:font-medium md:leading-relaxed">Más de 5,000 tratamientos realizados con excelentes resultados.</p>
+                    <p className="font-semibold capitalize max-w-[440px] md:text-lg md:font-medium md:leading-6 pb-2">Más de 5,000 tratamientos realizados con excelentes resultados.</p>
                     <p className="text-sm leading-relaxed max-w-[440px]">Confía en la terapia que ha ayudado a miles de hombres a recuperar su confianza y bienestar sexual.</p>
                 </section>
                 <section className="flex flex-col gap-4 md:flex-1/3">
