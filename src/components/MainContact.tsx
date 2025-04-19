@@ -28,16 +28,18 @@ export const MainContact = () => {
       };
 
   return (
-    <section className="container mx-auto px-4 max-w-[1400px] py-20 md:py-24 lg:py-32">
+    <section className="container mx-auto px-4 max-w-[1400px] py-20 md:py-24 lg:py-48">
         <div className="flex flex-col lg:flex-row lg:gap-10 justify-between items-center">
-            <div className="text-center lg:text-left mb-8 md:mb-0 max-w-[600px]">
+            <div className="text-center lg:text-left mb-8 md:mb-0 max-w-[600px]" data-aos="fade-up"
+     data-aos-duration="800">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text mb-4">
                 Da el primer paso hacia tu bienestar
                 </h2>
                 <p>Agenda tu evaluación inicial con nuestros especialistas en Quito y recibe una atención personalizada desde el primer día.</p>
             </div>
             <div className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]">
-                <form onSubmit={handleSubmit} className="ml-auto w-full flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="ml-auto w-full flex flex-col gap-4" data-aos="fade-up"
+     data-aos-duration="800">
                     <input 
                         className="outline-none border border-in-blue py-3 px-2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
                         type="text" 

@@ -16,7 +16,8 @@ export const Benefits = () => {
       >
         Beneficios
       </h2>
-      <div className="relative overflow-visible ">
+      <div className="relative overflow-visible" data-aos="fade-up"
+     data-aos-duration="800">
         <Swiper
           modules={[Navigation, Autoplay]}
           spaceBetween={16}

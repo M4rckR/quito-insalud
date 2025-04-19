@@ -11,6 +11,8 @@ export const Testimonials = () => {
           Testimonios que nos respaldan
         </h2>
         <Swiper
+        data-aos="fade-up"
+     data-aos-duration="800"
           effect={"fade"}
           modules={[EffectFade, Autoplay]}
           fadeEffect={{ crossFade: true }}

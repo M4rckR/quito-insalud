@@ -4,8 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 
 const slides = [
     "/images/item-1.png",
-    "/images/item-1.png",
-    "/images/item-1.png",
+    "/images/item-2.png",
 ];
 
 export const CarouselHome = () => {

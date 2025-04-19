@@ -9,7 +9,8 @@ export const InfoTreatment = () => {
           <div className="flex flex-col md:flex-row gap-x-6">
             <div  className="w-full rounded md:min-w-[380px]  h-[450px] mx-auto mb-6">
               <ReactPlayer
-                data-aos="fade-right"
+                data-aos="fade-up"
+     data-aos-duration="800"
                 url="https://www.youtube.com/watch?v=WQKqfT_l-SI"
                 width="100%"
                 height="100%"
@@ -20,14 +21,16 @@ export const InfoTreatment = () => {
                 
               />
               <img
-                data-aos="fade-right"
+                data-aos="fade-up"
+     data-aos-duration="800"
                 src="/images/equipo-laser.png"
                 alt="ondas de choque"
                 className="w-3/5 mx-auto hidden md:block"
               />
             </div>
             <div className="space-y-4 md:pt-24">
-              <div className="md:pl-6" data-aos="fade-left">
+              <div className="md:pl-6" data-aos="fade-up"
+     data-aos-duration="800">
                 <h3 className="text-in-cyan-text text-3xl md:text-4xl md:pb-4 pb-2">
                   Ondas de choque
                 </h3>
@@ -39,7 +42,8 @@ export const InfoTreatment = () => {
                   progresiva.
                 </p>
               </div>
-              <div data-aos="fade-left">
+              <div data-aos="fade-up"
+     data-aos-duration="800">
                 <img
                 
                   src="/images/tratamiento.png"

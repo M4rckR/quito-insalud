@@ -1,7 +1,8 @@
 export const AppointmentCTA = () => {
   return (
     <section className="container mx-auto px-4 max-w-[1440px] py-6 pb-32">
-        <div data-aos="fade-right" className="bg-in-cyan-light relative flex flex-col items-center px-6 py-16 text-center text-in-blue rounded-2xl gap-4 max-w-[1200px] mx-auto">
+        <div data-aos="fade-up"
+     data-aos-duration="800" className="bg-in-cyan-light relative flex flex-col items-center px-6 py-16 text-center text-in-blue rounded-2xl gap-4 max-w-[1200px] mx-auto">
             <div className="max-w-[840px] space-y-4">
                 <h2 className="hidden md:block text-xl md:text-2xl lg:text-3xl font-bold leading-10">Recupera tu confianza con un <br /> tratamiento clínico eficaz y personalizado</h2>
                 <h2 className="md:hidden text-xl md:text-2xl lg:text-3xl font-bold">Recupera tu confianza con un  tratamiento clínico <span className="hidden sm:block">eficaz y personalizado</span> </h2>
