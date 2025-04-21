@@ -14,10 +14,11 @@ export const InsaludApp = () => {
   }, []);
 
   return (
-    <Routes>
+      <Routes>
         <Route path='/' element={<MainLayout/>}>
           <Route index element={<Home/>} />
         </Route>
     </Routes>
+    
   )
 }

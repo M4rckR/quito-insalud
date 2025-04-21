@@ -40,7 +40,7 @@ export const MainContact = () => {
                 </h2>
                 <p>Agenda tu evaluación inicial con nuestros especialistas en Quito y recibe una atención personalizada desde el primer día.</p>
             </div>
-            <div className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]">
+            <div className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 max-w-[550px] lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]">
                 <form onSubmit={handleSubmit} className="ml-auto w-full flex flex-col gap-4" data-aos="fade-up"
      data-aos-duration="800">
                     <input 
@@ -87,8 +87,8 @@ export const MainContact = () => {
                                 />
                             <img 
                                 onClick={() => fechaInputRef.current?.showPicker()}
-                                className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer" 
-                                src="/vector/calendar.svg" 
+                                className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6" 
+                                src="vector/calendar.svg" 
                                 alt="icono fecha" />
                         </div>
                         <div className="w-full relative">
@@ -107,8 +107,8 @@ export const MainContact = () => {
                                 />
                                 <img 
                                     onClick={() => horarioInputRef.current?.showPicker()}
-                                    className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer" 
-                                    src="/vector/watch.svg" 
+                                    className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6" 
+                                    src="vector/watch.svg" 
                                     alt="icono fecha" />
                         </div>
 

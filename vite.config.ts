@@ -11,5 +11,9 @@ export default defineConfig({
     allowedHosts: [
       '.ngrok-free.app'
     ],
+  },
+  base: '/quito/',
+  ssr : {
+    noExternal: ['react-helmet-async'],
   }
 })

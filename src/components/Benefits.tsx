@@ -9,7 +9,7 @@ export const Benefits = () => {
   const [atEnd, setAtEnd] = useState(false);
 
   return (
-    <div className="container mx-auto px-4 max-w-[1440px] pb-20 lg:pb-32">
+    <div id="beneficios" className="container mx-auto px-4 max-w-[1440px] pb-20 lg:pb-32">
       <h2
         className="text-center text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text mb-4"
         data-aos="zoom-in"
@@ -68,7 +68,7 @@ export const Benefits = () => {
           >
             <img
               className="rotate-180 cursor-pointer hover:scale-105 transition-all duration-150"
-              src="/vector/arrows-benefits.svg"
+              src="vector/arrows-benefits.svg"
               alt="button prev"
             />
           </div>
@@ -79,7 +79,7 @@ export const Benefits = () => {
           >
             <img
               className="cursor-pointer hover:scale-105 transition-all duration-150"
-              src="/vector/arrows-benefits.svg"
+              src="vector/arrows-benefits.svg"
               alt="button prev"
             />
           </div>

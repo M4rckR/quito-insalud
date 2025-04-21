@@ -21,24 +21,22 @@ export const MainHero = () => {
           <div className="flex justify-center md:justify-end">
             <CarouselHome />
           </div>
-          <div className="hidden space-y-2 pl-4 pt-2 md:-mt-26 lg:-mt-32 md:block">
+          <div className="hidden space-y-2 pl-4 pt-6 md:-mt-26 lg:-mt-32 md:block">
             <div className="flex items-start justify-center md:justify-start gap-2">
               <img
                 className="w-6 md:w-8"
-                src="/vector/quotes.svg"
+                src="vector/quotes.svg"
                 alt="quotes"
               />
               <p className="text-sm text-in-blue font-medium pt-2 max-w-[450px]">
-                Me hice el chequeo prostático en Insalud. Fue rápido, sencillo y  
-                me dio tranquilidad. ¡Lo recomiendo a todos los hombres de mi
-                edad!
+              Realicé la terapia de ondas de choque en Insalud. Fue sencillo, profesional y noté resultados desde la primera sesión. ¡Se lo sugiero a todos!
               </p>
             </div>
             <div className="flex items-center gap-2 justify-center md:justify-start md:pl-10">
-              <img className="rounded-full w-12" src="/avatars/avatar3.png" alt="avatar main" />
+              <img className="rounded-full w-12 h-12" width={12} height={12} src="avatars/avatar3.png" alt="avatar main" />
               <div className="text-in-blue">
-                <p className="p-0 font-semibold text-lg/6">Juan Colden</p>
-                <p className="p-0 text-sm/4">52 años</p>
+                <p className="p-0 font-semibold text-lg/6">Raul E.</p>
+                <p className="p-0 text-sm/4">31 años</p>
               </div>
             </div>
           </div>
@@ -47,20 +45,19 @@ export const MainHero = () => {
      data-aos-duration="800">
           <div className="flex items-start justify-center gap-2">
             <img
-              className="w-6 md:w-8"
-              src="/vector/quotes.svg"
+              className="w-6 h-6 md:w-8"
+              src="vector/quotes.svg"
               alt="quotes"
             />
             <p className="text-sm text-in-blue font-medium pt-2 max-w-[450px]">
-              Me hice el chequeo prostático en Insalud. Fue rápido, sencillo y me
-              dio tranquilidad. ¡Lo recomiendo a todos los hombres de mi edad!
+            Realicé la terapia de ondas de choque en Insalud. Fue sencillo, profesional y noté resultados desde la primera sesión. ¡Se lo sugiero a todos!
             </p>
           </div>
           <div className="flex items-center gap-2 justify-center lg:justify-start lg:pl-10">
-          <img className="rounded-full w-12" src="/avatars/avatar3.png" alt="avatar main" />
+          <img className="rounded-full w-12 h-12" width={12} height={12} src="avatars/avatar3.png" alt="avatar main" />
             <div className="text-in-blue">
-              <p className="p-0 font-semibold text-lg/6">Juan Colden</p>
-              <p className="p-0 text-sm/4">52 años</p>
+              <p className="p-0 font-semibold text-lg/6">Raul E.</p>
+              <p className="p-0 text-sm/4">31 años</p>
             </div>
           </div>
         </div>

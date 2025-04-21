@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port 5000"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
@@ -17,7 +17,6 @@
     "quito-insalud": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-player": "^2.16.0",
     "react-router-dom": "^7.5.1",
     "react-scroll": "^1.9.3",
     "swiper": "^11.2.6",
@@ -28,6 +27,7 @@
     "@types/aos": "^3.0.7",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@types/react-helmet-async": "^1.0.1",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-scroll": "^1.8.10",
     "@vitejs/plugin-react-swc": "^3.8.0",

@@ -60,6 +60,7 @@
 body {
   @apply font-in-poppins;
   @apply text-in-textbase;
+  font-display: swap;
 }
 
 

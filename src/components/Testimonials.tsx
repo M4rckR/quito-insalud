@@ -34,7 +34,7 @@ export const Testimonials = () => {
                   </p>
                   <div className="flex gap-4 items-center mt-4">
                     <img
-                      src="/avatars/avatar1.png"
+                      src="avatars/avatar1.png"
                       alt="avatar user"
                       className="w-12 h-12 rounded-full bg-gray-200"
                     />
@@ -53,7 +53,7 @@ export const Testimonials = () => {
                   </p>
                   <div className="flex gap-4 items-center mt-4">
                     <img
-                      src="/avatars/avatar2.png"
+                      src="avatars/avatar2.png"
                       alt="avatar user"
                       className="w-12 h-12 rounded-full bg-gray-200"
                     />
@@ -70,8 +70,8 @@ export const Testimonials = () => {
           ))}
         </Swiper>
       </div>
-      <img className="absolute left-0 top-1/2 -translate-y-1/2" src="/vector/vector-1.svg" alt="fondo vector" />
-      <img className="absolute right-0 top-1/2 -translate-y-1/2" src="/vector/vector-2.svg" alt="fondo vector" />
+      <img className="absolute left-0 top-1/2 -translate-y-1/2" src="vector/vector-1.svg" alt="fondo vector" />
+      <img className="absolute right-0 top-1/2 -translate-y-1/2" src="vector/vector-2.svg" alt="fondo vector" />
     </section>
   );
 };

@@ -1,29 +1,16 @@
-import ReactPlayer from "react-player";
-
 export const InfoTreatment = () => {
   return (
     <div className="relative mb-16 lg:pt-24 md:mb-72">
-        <div className="absolute hidden md:block md:top-[420px] lg:top-[400px] left-0 right-0 w-full inset-0 h-[800px] bg-gradient-to-b from-in-cyan to-in-white -z-10"></div>
+      <div className="absolute hidden md:block md:top-[420px] lg:top-[400px] left-0 right-0 w-full inset-0 h-[800px] bg-gradient-to-b from-in-cyan to-in-white -z-10"></div>
       <section className="container mx-auto px-4 max-w-[1400px] mb-12">
         <div className="gap-6">
           <div className="flex flex-col md:flex-row gap-x-6">
-            <div  className="w-full rounded md:min-w-[380px]  h-[450px] mx-auto mb-6">
-              <ReactPlayer
-                data-aos="fade-up"
-     data-aos-duration="800"
-                url="https://www.youtube.com/watch?v=WQKqfT_l-SI"
-                width="100%"
-                height="100%"
-                controls={true}
-                className="react-player"
-                light={true}
-                playing={true}
-                
-              />
+            <div  className="w-full max-w-[380px] mx-auto mb-6 space-y-8">
+              <img className="w-full " src="images/hombre-deficiencia.png" alt="imagen hombre triste" />
               <img
                 data-aos="fade-up"
      data-aos-duration="800"
-                src="/images/equipo-laser.png"
+                src="images/equipo-laser.png"
                 alt="ondas de choque"
                 className="w-3/5 mx-auto hidden md:block"
               />
@@ -46,7 +33,7 @@ export const InfoTreatment = () => {
      data-aos-duration="800">
                 <img
                 
-                  src="/images/tratamiento.png"
+                  src="images/tratamiento.png"
                   alt="ondas de choque"
                   className="w-full"
                 />

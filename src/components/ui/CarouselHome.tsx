@@ -2,7 +2,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
 
-const slides = ["/images/item-1.png", "/images/item-2.png"];
+const slides = ["images/item-1.png", "images/item-2.png"];
 
 export const CarouselHome = () => {
   const [index, setIndex] = useState(0);
