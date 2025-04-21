@@ -26,21 +26,24 @@ export const AccordionItem = ({title,children, isOpen, onToggle}:AccordionItemPr
       className="w-full flex gap-4 items-center py-4 font-semibold text-in-blue cursor-pointer"
       onClick={onToggle}
     >
-      <span
-        className={`relative w-[18px] rounded-lg h-[3px] bg-in-blue transition-all duration-300 after:absolute after:left-2  after:-top-[8px] after:w-[3px] after:h-[18px] after:bg-in-blue after:content-[''] after:rounded-lg ${
-            isOpen ? 'bg-in-cyan-text w-[22px] after:bg-in-cyan-text after:opacity-0' : '-rotate-90 '
-        }`}
-        >
+
+        <span className="relative flex items-center">
+          <p className="text-lg text-left pl-12">{title}</p>
+          <span
+          className={`absolute w-[18px] rounded-lg h-[3px] bg-in-blue transition-all duration-300 after:absolute after:left-2  after:-top-[8px] after:w-[3px] after:h-[18px] after:bg-in-blue after:content-[''] after:rounded-lg ${
+              isOpen ? 'bg-in-cyan-text w-[22px] after:bg-in-cyan-text after:opacity-0' : '-rotate-90 '
+          }`}
+          >
         
-      </span>
-        <span className="text-lg">{title}</span>
+      </span> 
+        </span>
     </button>
 
     <div
       style={{ maxHeight: `${height}px` }}
       className="transition-all duration-500 ease-in-out overflow-hidden"
     >
-      <div ref={contentRef} className="pb-4 pl-10 text-sm text-in-blue/80">
+      <div ref={contentRef} className="pb-4 pl-12 text-sm text-in-blue/80">
         {children}
       </div>
     </div>

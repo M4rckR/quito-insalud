@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export const MainContact = () => {
 
@@ -9,6 +9,9 @@ export const MainContact = () => {
         fecha: "",
         horario: "",
       });
+
+      const fechaInputRef = useRef<HTMLInputElement>(null);
+      const horarioInputRef = useRef<HTMLInputElement>(null);
 
       const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,7 +31,7 @@ export const MainContact = () => {
       };
 
   return (
-    <section className="container mx-auto px-4 max-w-[1400px] py-20 md:py-24 lg:py-48">
+    <section className="container mx-auto px-4 max-w-[1400px] pb-20 md:pb-24 lg:pb-48">
         <div className="flex flex-col lg:flex-row lg:gap-10 justify-between items-center">
             <div className="text-center lg:text-left mb-8 md:mb-0 max-w-[600px]" data-aos="fade-up"
      data-aos-duration="800">
@@ -70,24 +73,41 @@ export const MainContact = () => {
                             />
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
-                        <input 
-                            className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
-                            type="date" 
-                            name="fecha"
-                            value={formData.fecha}
-                            placeholder="Fecha" 
-                            onChange={handleChange}
-                            required
-                            />
-                        <input 
-                            className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
-                            type="time" 
-                            value={formData.horario}
-                            name="horario"
-                            placeholder="Horario" 
-                            onChange={handleChange}
-                            required
-                            />
+                        <div className="w-full relative">
+                            <input 
+                                ref={fechaInputRef}
+                                className="contact-date w-full outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
+                                type="date" 
+                                name="fecha"
+                                value={formData.fecha}
+                                placeholder="Fecha" 
+                                onChange={handleChange}
+                                required
+                                />
+                            <img 
+                                onClick={() => fechaInputRef.current?.showPicker()}
+                                className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer" 
+                                src="/vector/calendar.svg" 
+                                alt="icono fecha" />
+                        </div>
+                        <div className="w-full relative">
+                            <input 
+                                ref={horarioInputRef}
+                                className="contact-watch outline-none w-full border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
+                                type="time" 
+                                value={formData.horario}
+                                name="horario"
+                                placeholder="Horario" 
+                                onChange={handleChange}
+                                required
+                                />
+                                <img 
+                                    onClick={() => horarioInputRef.current?.showPicker()}
+                                    className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer" 
+                                    src="/vector/watch.svg" 
+                                    alt="icono fecha" />
+                        </div>
+
                     </div>
                     <button type="submit" className="cursor-pointer bg-in-orange text-center text-white font-medium py-3 rounded-2xl">¡Reserva tu cita ahora!</button>
                     <p className="leading-5 text-in-blue text-sm">Al llenar el formulario, Ud. acepta los Términos y Condiciones / Política de Privacidad</p>

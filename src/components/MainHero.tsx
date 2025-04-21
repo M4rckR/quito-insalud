@@ -43,7 +43,8 @@ export const MainHero = () => {
             </div>
           </div>
         </div>
-        <div className="md:hidden space-y-2 pl-4 pt-6 md:pt-4 mt-4">
+        <div className="md:hidden space-y-2 pl-4 pt-6 md:pt-4 mt-4" data-aos="fade-up"
+     data-aos-duration="800">
           <div className="flex items-start justify-center gap-2">
             <img
               className="w-6 md:w-8"

@@ -9,7 +9,7 @@ export const Benefits = () => {
   const [atEnd, setAtEnd] = useState(false);
 
   return (
-    <div className="container mx-auto px-4 max-w-[1440px] py-6 pb-32">
+    <div className="container mx-auto px-4 max-w-[1440px] pb-20 lg:pb-32">
       <h2
         className="text-center text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text mb-4"
         data-aos="zoom-in"

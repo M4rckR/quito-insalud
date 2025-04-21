@@ -21,9 +21,15 @@ export const HeaderMain = () => {
                         </Link>
                     </p>
                     <div className="flex gap-4">
-                        <img className="w-6 sm:w-7 cursor-pointer" src="/icons/instagram.svg" alt="logo instagram" />
-                        <img className="w-6 sm:w-7 cursor-pointer" src="/icons/tiktok.svg" alt="logo tiktok" />
-                        <img className="w-6 sm:w-7 cursor-pointer" src="/icons/fb.svg" alt="logo facebook" />
+                        <a href="https://www.instagram.com/insalud.sedequito?igsh=YThkMDh3eXQ5d3Q4" target="_blank">
+                           <img className="w-6 sm:w-7 cursor-pointer" src="/icons/instagram.svg" alt="logo instagram" />
+                        </a>
+                        <a href="https://www.tiktok.com/@insaludquito?_t=ZM-8vfZK2TtAhS&_r=1" target="_blank">
+                            <img className="w-6 sm:w-7 cursor-pointer" src="/icons/tiktok.svg" alt="logo tiktok" />
+                        </a>
+                        <a href="https://www.facebook.com/share/15xS3Z6y8C/?mibextid=wwXIfr" target="_blank">
+                            <img className="w-6 sm:w-7 cursor-pointer" src="/icons/fb.svg" alt="logo facebook" />
+                        </a>
                     </div>
                 </div>
             </div>

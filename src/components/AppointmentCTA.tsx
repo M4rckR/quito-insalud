@@ -1,6 +1,6 @@
 export const AppointmentCTA = () => {
   return (
-    <section className="container mx-auto px-4 max-w-[1440px] py-6 pb-32">
+    <section className="container mx-auto px-4 max-w-[1440px]  pb-24  lg:pb-32">
         <div data-aos="fade-up"
      data-aos-duration="800" className="bg-in-cyan-light relative flex flex-col items-center px-6 py-16 text-center text-in-blue rounded-2xl gap-4 max-w-[1200px] mx-auto">
             <div className="max-w-[840px] space-y-4">
