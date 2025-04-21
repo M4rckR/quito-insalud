@@ -25,7 +25,7 @@ export const CarouselHome = () => {
   // const scrollTo = (i: number) => emblaApi?.scrollTo(i);
 
   return (
-    <div className="relative w-full max-w-[560px] h-[560px]">
+    <div className="relative w-full max-w-[560px]">
       {/* viewport */}
       <div ref={emblaRef} className="overflow-hidden rounded-xl w-full h-full">
         {/* rail */}

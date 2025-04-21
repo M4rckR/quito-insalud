@@ -6,8 +6,8 @@ export const MainContact = () => {
         nombres: "",
         correo: "",
         telefono: "",
-        fecha: "",
-        horario: "",
+        fecha: "2026-01-01",
+        horario: "00:00",
       });
 
       const fechaInputRef = useRef<HTMLInputElement>(null);
@@ -27,7 +27,7 @@ export const MainContact = () => {
             horario: "",
             });
         // Aquí conectas con NoCodeAPI
-        console.log(formData);
+        // console.log(formData);
       };
 
   return (
@@ -76,7 +76,8 @@ export const MainContact = () => {
                         <div className="w-full relative">
                             <input 
                                 ref={fechaInputRef}
-                                className="contact-date w-full outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
+                                className="appearance-none
+                                contact-date w-full outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
                                 type="date" 
                                 name="fecha"
                                 value={formData.fecha}
@@ -91,15 +92,18 @@ export const MainContact = () => {
                                 alt="icono fecha" />
                         </div>
                         <div className="w-full relative">
+                                
                             <input 
                                 ref={horarioInputRef}
-                                className="contact-watch outline-none w-full border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
+                                className="appearance-none
+ contact-watch outline-none w-full border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"                 
                                 type="time" 
                                 value={formData.horario}
                                 name="horario"
                                 placeholder="Horario" 
                                 onChange={handleChange}
                                 required
+                                
                                 />
                                 <img 
                                     onClick={() => horarioInputRef.current?.showPicker()}

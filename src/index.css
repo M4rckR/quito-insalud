@@ -69,6 +69,7 @@ body {
 
 
 .contact-date::-webkit-calendar-picker-indicator, .contact-watch::-webkit-calendar-picker-indicator {
+  
   opacity: 0;
   cursor: pointer;
   position: absolute;
