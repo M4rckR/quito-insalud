@@ -1,126 +1,174 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { AddClients } from "../services/AddClients";
 import { Client } from "../types";
+import { Bounce, toast } from "react-toastify";
 
 export const MainContact = () => {
+    
+    const [hoy, setHoy] = useState("");
 
-    const [formData, setFormData] = useState<Client>({
-        nombres: "",
-        correo: "",
-        telefono: "",
-        fecha: "2026-01-01",
-        hora: "00:00",
+    useEffect(() => {
+        const fecha = new Date();
+        const yyyy = fecha.getFullYear();
+        const mm = String(fecha.getMonth() + 1).padStart(2, "0");
+        const dd = String(fecha.getDate()).padStart(2, "0");
+        setHoy(`${yyyy}-${mm}-${dd}`);
+    }, []);
+    
+  const [formData, setFormData] = useState<Client>({
+    nombres: "",
+    correo: "",
+    telefono: "",
+    fecha: "",
+    hora: "00:00",
+  });
+
+  
+
+
+  const fechaInputRef = useRef<HTMLInputElement>(null);
+  const horarioInputRef = useRef<HTMLInputElement>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+    const {name, value} = e.target
+
+    if(name === "telefono"){
+        const onlyNumbers = value.replace(/\D/g, "");
+        setFormData({ ...formData, telefono: onlyNumbers });
+    } else {
+        setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    await AddClients(formData);
+    setFormData({
+      nombres: "",
+      correo: "",
+      telefono: "",
+      fecha: "",
+      hora: "",
+    });
+    toast.success("¡Reserva enviada con éxito!", {
+        position: "bottom-right",
+        transition: Bounce,
       });
-
-      const fechaInputRef = useRef<HTMLInputElement>(null);
-      const horarioInputRef = useRef<HTMLInputElement>(null);
-
-      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-      };
-
-      const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        
-        await AddClients(formData)
-        setFormData({
-            nombres: "",
-            correo: "",
-            telefono: "",
-            fecha: "",
-            hora: "",
-        });
-      };
+  };
 
   return (
-    <section className="container mx-auto px-4 max-w-[1400px] pb-20 md:pb-24 lg:pb-48">
-        <div className="flex flex-col lg:flex-row lg:gap-10 justify-between items-center">
-            <div className="text-center lg:text-left mb-8 md:mb-0 max-w-[600px]" data-aos="fade-up"
-     data-aos-duration="800">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text mb-4">
-                Da el primer paso hacia tu bienestar
-                </h2>
-                <p>Agenda tu evaluación inicial con nuestros especialistas en Quito y recibe una atención personalizada desde el primer día.</p>
-            </div>
-            <div className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 max-w-[550px] lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]">
-                <form onSubmit={handleSubmit} className="ml-auto w-full flex flex-col gap-4" data-aos="fade-up"
-     data-aos-duration="800">
-                    <input 
-                        className="outline-none border border-in-blue py-3 px-2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
-                        type="text" 
-                        name="nombres" 
-                        id="nombres" 
-                        value={formData.nombres}
-                        placeholder="Nombres y Apellidos"
-                        onChange={handleChange}
-                        required
-                        />
-                    <div className="flex flex-col md:flex-row gap-4">
-                        <input 
-                            className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
-                            type="email" 
-                            name="correo"
-                            value={formData.correo}
-                            placeholder="Correo Electrónico" 
-                            onChange={handleChange}
-                            required/>
-                        <input 
-                            className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue" 
-                            type="tel" 
-                            name="telefono"
-                            value={formData.telefono}
-                            placeholder="Teléfono" 
-                            onChange={handleChange}
-                            required
-                            />
-                    </div>
-                    <div className="flex flex-col md:flex-row gap-4">
-                        <div className="w-full relative">
-                            <input 
-                                ref={fechaInputRef}
-                                className="appearance-none
-                                contact-date w-full outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
-                                type="date" 
-                                name="fecha"
-                                value={formData.fecha}
-                                placeholder="Fecha" 
-                                onChange={handleChange}
-                                required
-                                />
-                            <img 
-                                onClick={() => fechaInputRef.current?.showPicker()}
-                                className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6" 
-                                src="vector/calendar.svg" 
-                                alt="icono fecha" />
-                        </div>
-                        <div className="w-full relative">
-                                
-                            <input 
-                                ref={horarioInputRef}
-                                className="appearance-none
- contact-watch outline-none w-full border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"                 
-                                type="time" 
-                                value={formData.hora}
-                                name="hora"
-                                placeholder="Horario" 
-                                onChange={handleChange}
-                                required
-                                
-                                />
-                                <img 
-                                    onClick={() => horarioInputRef.current?.showPicker()}
-                                    className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6" 
-                                    src="vector/watch.svg" 
-                                    alt="icono fecha" />
-                        </div>
-
-                    </div>
-                    <button type="submit" className="cursor-pointer bg-in-orange text-center text-white font-medium py-3 rounded-2xl">¡Reserva tu cita ahora!</button>
-                    <p className="leading-5 text-in-blue text-sm">Al llenar el formulario, Ud. acepta los Términos y Condiciones / Política de Privacidad</p>
-                </form>
-            </div>
+    <section id="formulario" className="container mx-auto px-4 max-w-[1400px] pb-20 md:pb-24 lg:pb-48">
+      <div className="flex flex-col lg:flex-row lg:gap-10 justify-between items-center">
+        <div
+          className="text-center lg:text-left mb-8 md:mb-0 max-w-[600px]"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text mb-4">
+            Da el primer paso hacia tu bienestar
+          </h2>
+          <p>
+            Agenda tu evaluación inicial con nuestros especialistas en Quito y
+            recibe una atención personalizada desde el primer día.
+          </p>
         </div>
-        
+        <div className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 max-w-[550px] lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]">
+          <form
+            onSubmit={handleSubmit}
+            className="ml-auto w-full flex flex-col gap-4"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            <input
+              className="outline-none border border-in-blue py-3 px-2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+              type="text"
+              name="nombres"
+              id="nombres"
+              value={formData.nombres}
+              placeholder="Nombres y Apellidos"
+              onChange={handleChange}
+              required
+            />
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+                type="email"
+                name="correo"
+                value={formData.correo}
+                placeholder="Correo Electrónico"
+                onChange={handleChange}
+                required
+              />
+              <input
+                className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+                type="tel"
+                name="telefono"
+                inputMode="numeric"          // teclado numérico en móviles
+                pattern="[0-9]*"  
+                maxLength={10}
+                value={formData.telefono}
+                placeholder="Teléfono"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="w-full relative">
+                <input
+                  ref={fechaInputRef}
+                  className="appearance-none
+                                contact-date w-full outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+                  type="date"
+                  name="fecha"
+                  value={formData.fecha}
+                  placeholder="Fecha"
+                  onChange={handleChange}
+                  min={hoy}
+                  defaultValue={hoy}
+                  required
+                />
+                <img
+                  onClick={() => fechaInputRef.current?.showPicker()}
+                  className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6"
+                  src="vector/calendar.svg"
+                  alt="icono fecha"
+                />
+              </div>
+              <div className="w-full relative">
+                <input
+                  ref={horarioInputRef}
+                  className="appearance-none
+ contact-watch outline-none w-full border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+                  type="time"
+                  value={formData.hora}
+                  name="hora"
+                  placeholder="Horario"
+                  onChange={handleChange}
+                  required
+                />
+                <img
+                  onClick={() => horarioInputRef.current?.showPicker()}
+                  className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6"
+                  src="vector/watch.svg"
+                  alt="icono fecha"
+                />
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="cursor-pointer bg-in-orange text-center text-white font-medium py-3 rounded-2xl"
+            >
+              ¡Reserva tu cita ahora!
+            </button>
+            <p className="leading-5 text-in-blue text-sm">
+              Al llenar el formulario, Ud. acepta los <a className="underline font-semibold" href="pdf/politica-de-tratamiento-de-datos-personales.pdf" target="_blank"> Términos y Condiciones /
+              Política de Privacidad</a> 
+            </p>
+          </form>
+        </div>
+      </div>
     </section>
-  )
-}
+  );
+};

@@ -4,6 +4,9 @@ import { Home } from './pages/Home';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import "react-toastify/dist/ReactToastify.css";
+
+
 export const InsaludApp = () => {
 
   useEffect(() => {

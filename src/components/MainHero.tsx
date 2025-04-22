@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import { CarouselHome } from "./ui/CarouselHome";
 
 
@@ -15,7 +16,9 @@ export const MainHero = () => {
               <span className="font-bold">cirugía</span>
             </h2>
             <div className="flex justify-center md:justify-start">
-              <a className="bg-in-orange py-2 md:py-3 px-8 rounded-3xl text-white font-medium" href="#">Agendar cita</a>
+                <Link className="bg-in-orange py-2 cursor-pointer md:py-3 px-8 rounded-3xl text-white font-medium" to="formulario" smooth={true} duration={500}>
+                Agendar cita
+                </Link>
             </div> 
           </div>
           <div className="flex justify-center md:justify-end">
