@@ -1,13 +1,15 @@
 import { useState, useRef } from "react";
+import { AddClients } from "../services/AddClients";
+import { Client } from "../types";
 
 export const MainContact = () => {
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<Client>({
         nombres: "",
         correo: "",
         telefono: "",
         fecha: "2026-01-01",
-        horario: "00:00",
+        hora: "00:00",
       });
 
       const fechaInputRef = useRef<HTMLInputElement>(null);
@@ -19,15 +21,15 @@ export const MainContact = () => {
 
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        
+        await AddClients(formData)
         setFormData({
-          nombres: "",
+            nombres: "",
             correo: "",
             telefono: "",
             fecha: "",
-            horario: "",
-            });
-        // Aquí conectas con NoCodeAPI
-        // console.log(formData);
+            hora: "",
+        });
       };
 
   return (
@@ -98,8 +100,8 @@ export const MainContact = () => {
                                 className="appearance-none
  contact-watch outline-none w-full border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"                 
                                 type="time" 
-                                value={formData.horario}
-                                name="horario"
+                                value={formData.hora}
+                                name="hora"
                                 placeholder="Horario" 
                                 onChange={handleChange}
                                 required
