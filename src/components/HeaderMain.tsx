@@ -7,8 +7,8 @@ export const HeaderMain = () => {
         <header className="container mx-auto px-4 max-w-[1440px] pt-6 pb-16 flex items-center justify-between">
             <div className="flex gap-2 items-center">
                 <img className="w-32 md:w-40" src="logos/logo-insalud.png" alt="logo insalud" />
-                <div className="w-[1px] h-8 bg-in-blue md:hidden"></div>
-                <p className="text-sm leading-4 md:hidden text-in-blue">SEDE <br /> Quito</p>
+                <div className="w-[1px] h-8 bg-in-blue"></div>
+                <p className="text-sm leading-4 text-in-blue">SEDE <br /> Quito</p>
             </div>
             <div>
                 <div className="font-in-nunito flex font-semibold text-lg text-in-blue gap-6 ">
