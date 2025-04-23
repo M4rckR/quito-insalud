@@ -11,7 +11,7 @@ export const FooterMain = () => {
                 </section>
                 <section className="flex flex-col gap-4 md:flex-1/3">
                     <div className="md:space-y-2">
-                        <p className="font-medium md:font-normal">Te espersamos en:</p>
+                        <p className="font-medium md:font-normal">Te esperamos en:</p>
                         <p className="text-sm md:text-base md:font-medium">Joaquín José Orrantia González 125, <br /> Torre Médica Solaris - Oficina 404</p>
                     </div>
                     <div className="md:space-y-2">
@@ -36,7 +36,7 @@ export const FooterMain = () => {
             </div>
             <div className="flex flex-col md:flex-row justify-between text-center font-semibold md:font-normal text-in-blue">
                 <p>© 2025 All Rights Reserved.</p>
-                <p>Team insalud</p>
+                <p>Team Insalud</p>
             </div>
         </footer>
     </div>

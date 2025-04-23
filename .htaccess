@@ -1,0 +1,26 @@
+# public_html/quito/.htaccess
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # HTML siempre fresco
+  ExpiresByType text/html "access plus 0 seconds"
+  # CSS y JS sin cache
+  ExpiresByType text/css "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 0 seconds"
+  # Imágenes con TTL muy corto (ej. 1 hora)
+  ExpiresByType image/jpeg "access plus 1 hour"
+  ExpiresByType image/png  "access plus 1 hour"
+  ExpiresByType image/gif  "access plus 1 hour"
+  ExpiresByType image/webp "access plus 1 hour"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Forzar siempre revalidación
+  <FilesMatch "\.(html|htm|css|js)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|gif|webp)$">
+    Header set Cache-Control "public, max-age=3600" 
+  </FilesMatch>
+</IfModule>

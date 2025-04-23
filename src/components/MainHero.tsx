@@ -1,3 +1,4 @@
+import { FaCheckCircle } from "react-icons/fa";
 import { Link } from 'react-scroll';
 import { CarouselHome } from "./ui/CarouselHome";
 
@@ -9,7 +10,7 @@ export const MainHero = () => {
           <div className="flex flex-col gap-2 md:gap-4">
             <h2 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl text-in-blue px-6 md:px-0">
               Recupera tu{" "}
-              <span className="text-in-cyan-text font-bold ">
+              <span className="text-in-cyan-text font-bold">
                 potencia sexual
               </span>{" "}
               sin <span className="font-bold">pastillas</span> ni{" "}
@@ -37,9 +38,15 @@ export const MainHero = () => {
             </div>
             <div className="flex items-center gap-2 justify-center md:justify-start md:pl-10">
               <img className="rounded-full w-12 h-12" width={12} height={12} src="avatars/avatar3.png" alt="avatar main" />
-              <div className="text-in-blue">
-                <p className="p-0 font-semibold text-lg/6">Raul E.</p>
-                <p className="p-0 text-sm/4">31 años</p>
+              <div className="text-in-blue flex gap-2">
+                <div>
+                  <p className="p-0 font-semibold text-lg/6">Raul E.</p>
+                  <p className="p-0 text-sm/4">31 años</p>
+                </div>
+                <div className="flex gap-1 text-in-cyan-text ">
+                  <FaCheckCircle  className="mt-1 w-3"/>
+                  <p className="text-xs font-medium mt-1">Usuario Verificado</p>
+                </div>
               </div>
             </div>
           </div>
@@ -57,10 +64,18 @@ export const MainHero = () => {
             </p>
           </div>
           <div className="flex items-center gap-2 justify-center lg:justify-start lg:pl-10">
-          <img className="rounded-full w-12 h-12" width={12} height={12} src="avatars/avatar3.png" alt="avatar main" />
-            <div className="text-in-blue">
-              <p className="p-0 font-semibold text-lg/6">Raul E.</p>
-              <p className="p-0 text-sm/4">31 años</p>
+            <div>
+              <img className="rounded-full w-12 h-12" width={12} height={12} src="avatars/avatar3.png" alt="avatar main" />
+            </div>
+            <div className="text-in-blue flex gap-2">
+              <div>
+                <p className="p-0 font-semibold text-lg/6">Raul E.</p>
+                <p className="p-0 text-sm/4">31 años</p>
+              </div>
+              <div className="flex gap-1 text-in-cyan-text ">
+                  <FaCheckCircle  className="mt-1 w-3"/>
+                  <p className="text-xs font-medium mt-1">Usuario Verificado</p>
+              </div>
             </div>
           </div>
         </div>

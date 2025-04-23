@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { testimonials } from "../data/testimonials";
 import { EffectFade, Autoplay } from "swiper/modules";
 import "swiper/css/effect-fade";
+import { FaCheckCircle } from "react-icons/fa";
 
 export const Testimonials = () => {
   return (
@@ -34,33 +35,45 @@ export const Testimonials = () => {
                   </p>
                   <div className="flex gap-4 items-center mt-4">
                     <img
-                      src="avatars/avatar1.png"
+                      src="avatars/default_avatar.png"
                       alt="avatar user"
                       className="w-12 h-12 rounded-full bg-gray-200"
                     />
                     <div>
-                      <p className="md:font-semibold">{testimonials.name}</p>
+                      <div className="flex gap-2">
+                        <p className="md:font-semibold">{testimonials.name}</p>
+                        <div className="flex gap-1 text-in-cyan-text ">
+                          <FaCheckCircle className="mt-1 w-3"/>
+                          <p className="text-xs font-medium mt-1">Usuario Verificado</p>
+                      </div>
+                      </div>
                       <p className="text-sm text-gray-500">
-                        {testimonials.job}
+                        {testimonials.age}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div>
+                <div> 
                   <p className="text-xl md:text-2xl font-medium">
                     {testimonials.text2}
                   </p>
                   <div className="flex gap-4 items-center mt-4">
                     <img
-                      src="avatars/avatar2.png"
+                      src="avatars/default_avatar.png"
                       alt="avatar user"
                       className="w-12 h-12 rounded-full bg-gray-200"
                     />
                     <div>
-                      <p className="md:font-semibold">{testimonials.name2}</p>
+                    <div className="flex gap-2">
+                        <p className="md:font-semibold">{testimonials.name2}</p>
+                        <div className="flex gap-1 text-in-cyan-text ">
+                          <FaCheckCircle className="mt-1 w-3"/>
+                          <p className="text-xs font-medium mt-1">Usuario Verificado</p>
+                      </div>
+                      </div>
                       <p className="text-sm text-gray-500">
-                        {testimonials.job2}
+                        {testimonials.age2}
                       </p>
                     </div>
                   </div>

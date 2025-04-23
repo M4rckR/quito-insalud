@@ -16,7 +16,7 @@ export const Questions = () => {
 
       <div className='flex flex-col md:flex-row gap-6 rounded-lg lg:px-16'>
         <div className='flex flex-col flex-1/2 gap-6'>
-          <div className='accordion-item' data-aos="fade-up" data-aos-duration="3000">
+          <div className='accordion-item' data-aos="fade-up" data-aos-duration="800">
             <AccordionItem
                   title="¿Funciona para todos?"
                   isOpen={openIndex === 0}
@@ -25,17 +25,17 @@ export const Questions = () => {
                   Sí, la terapia de ondas de choque es efectiva en la gran mayoría de pacientes. Hombres de todas las edades han reportado mejoras en la calidad y duración de sus erecciones desde las primeras sesiones.
               </AccordionItem>
           </div>
-          <div className='accordion-item' data-aos="fade-up" data-aos-duration="3000">
+          <div className='accordion-item' data-aos="fade-up" data-aos-duration="800">
             <AccordionItem
                   title="¿El tratamiento duele?"
                   isOpen={openIndex === 1}
                   onToggle={() => toggleIndex(1)}
               >
-                  No, es completamente indoloro.
+                  No, son indoloras y seguras cuando se realiza por profesionales capacitados. Es un procedimiento no invasivo y sin necesidad de cirugía.
             </AccordionItem>
           </div>
 
-          <div className='accordion-item' data-aos="fade-up" data-aos-duration="3000">
+          <div className='accordion-item' data-aos="fade-up" data-aos-duration="800">
             <AccordionItem
               title="¿Cuántas sesiones necesito?"
               isOpen={openIndex === 2}
@@ -51,17 +51,17 @@ export const Questions = () => {
         <div className='flex flex-col flex-1/2 gap-6'>
 
           
-          <div className='accordion-item' data-aos="fade-up" data-aos-duration="3000">
+          <div className='accordion-item' data-aos="fade-up" data-aos-duration="800">
             <AccordionItem
-              title="¿Cuántas sesiones necesito?"
+              title="¿Cuánto tiempo dura la sesión?"
               isOpen={openIndex === 3}
               onToggle={() => toggleIndex(3)}
             >
-              Se recomienda llevar de 6 sesiones a más dependiendo del caso.
+              Cada sesión dura 30 minutos aproximadamente y suelen espaciarse entre una o dos veces por semana.
             </AccordionItem>
           </div>
           
-          <div className='accordion-item' data-aos="fade-up" data-aos-duration="3000">
+          <div className='accordion-item' data-aos="fade-up" data-aos-duration="800">
             <AccordionItem
               title="¿Necesito realizar algún examen previo?"
               isOpen={openIndex === 4}

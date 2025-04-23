@@ -2,26 +2,45 @@ import { useState, useRef, useEffect } from "react";
 import { AddClients } from "../services/AddClients";
 import { Client } from "../types";
 import { Bounce, toast } from "react-toastify";
+import { SyncLoader } from "react-spinners";
 
 export const MainContact = () => {
     
     const [hoy, setHoy] = useState("");
+    const [minHora, setMinHora] = useState("00:00");
+    const [loading, setLoading] = useState(false)
+
+    const [formData, setFormData] = useState<Client>({
+      nombres: "",
+      correo: "",
+      telefono: "",
+      fecha: "",
+      hora: "00:00",
+    });
 
     useEffect(() => {
-        const fecha = new Date();
-        const yyyy = fecha.getFullYear();
-        const mm = String(fecha.getMonth() + 1).padStart(2, "0");
-        const dd = String(fecha.getDate()).padStart(2, "0");
-        setHoy(`${yyyy}-${mm}-${dd}`);
-    }, []);
+      const now = new Date();
+
+      // Formatear fecha de hoy como YYYY-MM-DD
+      const yyyy = now.getFullYear();
+      const mm   = String(now.getMonth() + 1).padStart(2, "0");
+      const dd   = String(now.getDate()).padStart(2, "0");
+      const formattedToday = `${yyyy}-${mm}-${dd}`;
     
-  const [formData, setFormData] = useState<Client>({
-    nombres: "",
-    correo: "",
-    telefono: "",
-    fecha: "",
-    hora: "00:00",
-  });
+      setHoy(formattedToday);
+    
+      // Si el usuario ha elegido hoy, bloqueamos horas pasadas
+      if (formData.fecha === formattedToday) {
+        const hh = String(now.getHours()).padStart(2, "0");
+        const mi = String(now.getMinutes()).padStart(2, "0");
+        setMinHora(`${hh}:${mi}`);
+      } else {
+        // Si es otro día, permitimos cualquier hora
+        setMinHora("00:00");
+      }
+    }, [formData.fecha]);
+    
+
 
   
 
@@ -43,8 +62,9 @@ export const MainContact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setLoading(true)
     await AddClients(formData);
+
     setFormData({
       nombres: "",
       correo: "",
@@ -52,15 +72,17 @@ export const MainContact = () => {
       fecha: "",
       hora: "",
     });
+
+    setLoading(false)
     toast.success("¡Reserva enviada con éxito!", {
         position: "bottom-right",
         transition: Bounce,
-      });
+    });
   };
 
   return (
     <section id="formulario" className="container mx-auto px-4 max-w-[1400px] pb-20 md:pb-24 lg:pb-48">
-      <div className="flex flex-col lg:flex-row lg:gap-10 justify-between items-center">
+      <div className="flex flex-col gap-8 lg:flex-row lg:gap-10 justify-between items-center">
         <div
           className="text-center lg:text-left mb-8 md:mb-0 max-w-[600px]"
           data-aos="fade-up"
@@ -74,15 +96,17 @@ export const MainContact = () => {
             recibe una atención personalizada desde el primer día.
           </p>
         </div>
-        <div className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 max-w-[550px] lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]">
+        <div 
+          className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 max-w-[550px] lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]"
+          data-aos="fade-up"
+          data-aos-duration="800"  
+        >
           <form
             onSubmit={handleSubmit}
             className="ml-auto w-full flex flex-col gap-4"
-            data-aos="fade-up"
-            data-aos-duration="800"
           >
             <input
-              className="outline-none border border-in-blue py-3 px-2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+              className="outline-none border border-in-blue py-3 px-3 rounded-xl placeholder:text-in-blue/40 text-in-blue"
               type="text"
               name="nombres"
               id="nombres"
@@ -93,7 +117,7 @@ export const MainContact = () => {
             />
             <div className="flex flex-col md:flex-row gap-4">
               <input
-                className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+                className="outline-none border border-in-blue py-3 px-3 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
                 type="email"
                 name="correo"
                 value={formData.correo}
@@ -102,7 +126,7 @@ export const MainContact = () => {
                 required
               />
               <input
-                className="outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+                className="outline-none border border-in-blue py-3 px-3 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
                 type="tel"
                 name="telefono"
                 inputMode="numeric"          // teclado numérico en móviles
@@ -119,14 +143,13 @@ export const MainContact = () => {
                 <input
                   ref={fechaInputRef}
                   className="appearance-none
-                                contact-date w-full outline-none border border-in-blue py-3 px-2 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
+                                contact-date w-full outline-none border border-in-blue py-3 px-3 md:flex-1/2 rounded-xl placeholder:text-in-blue/40 text-in-blue"
                   type="date"
                   name="fecha"
                   value={formData.fecha}
                   placeholder="Fecha"
                   onChange={handleChange}
                   min={hoy}
-                  defaultValue={hoy}
                   required
                 />
                 <img
@@ -144,7 +167,8 @@ export const MainContact = () => {
                   type="time"
                   value={formData.hora}
                   name="hora"
-                  placeholder="Horario"
+                  min={minHora}
+                  placeholder="Horario" 
                   onChange={handleChange}
                   required
                 />
@@ -160,15 +184,24 @@ export const MainContact = () => {
               type="submit"
               className="cursor-pointer bg-in-orange text-center text-white font-medium py-3 rounded-2xl"
             >
-              ¡Reserva tu cita ahora!
+              {
+                loading? (
+                  <SyncLoader
+                  size={6}
+                  color="#FFF"
+                /> 
+                ) : "¡Reserva tu cita ahora!"
+              }
+              
             </button>
             <p className="leading-5 text-in-blue text-sm">
               Al llenar el formulario, Ud. acepta los <a className="underline font-semibold" href="pdf/politica-de-tratamiento-de-datos-personales.pdf" target="_blank"> Términos y Condiciones /
               Política de Privacidad</a> 
             </p>
+
           </form>
         </div>
       </div>
     </section>
-  );
+  );  
 };

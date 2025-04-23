@@ -50,7 +50,7 @@ export const Benefits = () => {
           className="overflow-visible"
         >
           {benefits.map((benefit) => (
-            <SwiperSlide className="bg-white pt-6 px-6 pb-0 shadow-lg cursor-grab rounded-xl overflow-visible min-h-[280px] sm:min-h-[220px] md:min-h-[260px] xl:min-h-[220px]">
+            <SwiperSlide className="bg-white pt-6 px-6 pb-0 shadow-lg cursor-grab rounded-xl overflow-visible min-h-[280px] sm:min-h-[220px] md:min-h-[300px] xl:min-h-[240px]">
               <div className="flex flex-col justify-center">
                 <h3 className="text-2xl font-medium min-h-[60px]">
                   {benefit.title}
