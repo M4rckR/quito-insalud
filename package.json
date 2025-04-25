@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview --port 5000"
   },
+  "engines": {
+    "node": ">=16 <=20"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
     "aos": "^2.3.4",

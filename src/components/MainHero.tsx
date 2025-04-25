@@ -7,8 +7,8 @@ export const MainHero = () => {
     return (
       <section className="container mx-auto px-4 max-w-[1400px] mb-16 md:mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-y-6 gap-x-6">
-          <div className="flex flex-col gap-2 md:gap-4">
-            <h2 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl text-in-blue px-6 md:px-0">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-center md:text-left text-[32px] md:text-4xl lg:text-5xl text-in-blue px-4 md:px-0 leading-8 md:leading-14">
               Recupera tu{" "}
               <span className="text-in-cyan-text font-bold">
                 potencia sexual

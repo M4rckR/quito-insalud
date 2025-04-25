@@ -8,7 +8,7 @@ export const CarouselHome = () => {
   const [index, setIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, watchDrag: false },                    // sin drag, solo autoplay
+    { loop: true, watchDrag: true },                    // sin drag, solo autoplay
     [Autoplay({ delay: 5000, stopOnInteraction: false })]
   );
 

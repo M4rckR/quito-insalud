@@ -81,12 +81,15 @@ export const MainContact = () => {
   };
 
   return (
-    <section id="formulario" className="container mx-auto px-4 max-w-[1400px] pb-20 md:pb-24 lg:pb-48">
-      <div className="flex flex-col gap-8 lg:flex-row lg:gap-10 justify-between items-center">
+    <section id="formulario" className="container mx-auto px-4 max-w-[1400px] pb-10 md:pb-24 lg:pb-48"
+    data-aos="fade-up"
+    data-aos-duration="800"  
+    >
+      <div className="flex flex-col md:gap-8 lg:flex-row lg:gap-10 justify-between items-center"
+      >
         <div
           className="text-center lg:text-left mb-8 md:mb-0 max-w-[600px]"
-          data-aos="fade-up"
-          data-aos-duration="800"
+
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text mb-4">
             Da el primer paso hacia tu bienestar
@@ -98,8 +101,6 @@ export const MainContact = () => {
         </div>
         <div 
           className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 max-w-[550px] lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]"
-          data-aos="fade-up"
-          data-aos-duration="800"  
         >
           <form
             onSubmit={handleSubmit}

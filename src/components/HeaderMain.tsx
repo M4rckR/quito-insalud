@@ -4,7 +4,7 @@ export const HeaderMain = () => {
   return (
     <div className="relative">
         <div className="absolute top-0 left-0 w-full h-[300px] z-[-1] bg-gradient-to-b  from-in-cyan to-transparent"></div>
-        <header className="container mx-auto px-4 max-w-[1440px] pt-6 pb-16 flex items-center justify-between">
+        <header className="container mx-auto px-4 max-w-[1440px] pt-6 pb-12 md:pb-16 flex items-center justify-between">
             <div className="flex gap-2 items-center">
                 <img className="w-32 md:w-40" src="logos/logo-insalud.png" alt="logo insalud" />
                 <div className="w-[1px] h-8 bg-in-blue"></div>
