@@ -2,7 +2,7 @@ export const FooterMain = () => {
   return (
     <div className="relative">
         <div className="absolute bottom-0 left-0 w-full h-[300px] z-[-1] bg-gradient-to-t  from-in-cyan to-white"></div>
-        <footer className="container mx-auto px-4 max-w-[1440px] py-6">
+        <footer className="container mx-auto px-4 max-w-[1200px] py-6">
             <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 lg:gap-24 text-in-blue md:mb-12 text-center md:text-left">
                 <section className="flex flex-col gap-2 md:gap-0 justify-center md:flex-1/3"> 
                     <img className="w-48 mx-auto pb-4 md:pb-6 md:mx-0" src="logos/logo-insalud.png" alt="logo insalud" />

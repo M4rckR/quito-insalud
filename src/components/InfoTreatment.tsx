@@ -2,17 +2,21 @@ export const InfoTreatment = () => {
   return (
     <div className="relative mb-6 lg:pt-6 md:mb-36">
       <div className="absolute hidden md:block md:top-[420px] lg:top-[400px] left-0 right-0 w-full inset-0 h-[800px] bg-gradient-to-b from-in-cyan to-in-white -z-10"></div>
-      <section className="container mx-auto px-4 max-w-[1400px] mb-12">
+      <section className="container mx-auto px-4 max-w-[1200px] mb-12">
         <div className="gap-6">
           <div className="flex flex-col md:flex-row gap-x-6">
             <div  className="w-full sm:max-w-[380px] mx-auto mb-6 space-y-8">
               <img 
+                width={100}
+                height={300}
                 className="w-full hidden md:block  max-w-[280px] mx-auto my-auto mb-4 md:max-w-min" src="images/hombre-deficiencia.png" 
                 alt="imagen hombre triste" 
                 data-aos="fade-up"
                 data-aos-duration="800"
                 />
               <img 
+                width={100}
+                height={300}
                 className="w-full md:hidden mx-auto my-auto mb-4 md:max-w-min" 
                 src="images/hombre-deficiencia-mobile.png" 
                 alt="imagen hombre triste" 
@@ -20,6 +24,8 @@ export const InfoTreatment = () => {
                 data-aos-duration="600"  
               />
               <img
+                width={100}
+                height={300}
                 data-aos="fade-up"
      data-aos-duration="800"
                 src="images/equipo-laser.png"
@@ -44,7 +50,8 @@ export const InfoTreatment = () => {
               <div data-aos="fade-up"
      data-aos-duration="800">
                 <img
-                
+                  width={500}
+                  height={400}
                   src="images/tratamiento.png"
                   alt="ondas de choque"
                   className="w-full"

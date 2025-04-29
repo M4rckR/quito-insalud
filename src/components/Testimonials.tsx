@@ -7,7 +7,7 @@ import { FaCheckCircle } from "react-icons/fa";
 export const Testimonials = () => {
   return (
     <section className="relative">
-      <div className="container mx-auto px-4 max-w-[1440px] my-10">
+      <div className="container mx-auto px-4 max-w-[1200px] my-10">
         <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-medium text-in-cyan-text" data-aos="zoom-in">
           Testimonios que nos respaldan
         </h2>
@@ -35,6 +35,8 @@ export const Testimonials = () => {
                   </p>
                   <div className="flex gap-4 items-center mt-4">
                     <img
+                      width={10}
+                      height={10}
                       src="avatars/default_avatar.png"
                       alt="avatar user"
                       className="w-12 h-12 rounded-full bg-gray-200"
@@ -60,6 +62,8 @@ export const Testimonials = () => {
                   </p>
                   <div className="flex gap-4 items-center mt-4">
                     <img
+                      width={10}
+                      height={10}
                       src="avatars/default_avatar.png"
                       alt="avatar user"
                       className="w-12 h-12 rounded-full bg-gray-200"
@@ -83,8 +87,8 @@ export const Testimonials = () => {
           ))}
         </Swiper>
       </div>
-      <img className="absolute left-0 top-1/2 -translate-y-1/2" src="vector/vector-1.svg" alt="fondo vector" />
-      <img className="absolute right-0 top-1/2 -translate-y-1/2" src="vector/vector-2.svg" alt="fondo vector" />
+      <img width={10} height={10} className="absolute left-0 top-1/2 -translate-y-1/2" src="vector/vector-1.svg" alt="fondo vector" />
+      <img width={10} height={10} className="absolute right-0 top-1/2 -translate-y-1/2" src="vector/vector-2.svg" alt="fondo vector" />
     </section>
   );
 };

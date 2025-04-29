@@ -81,7 +81,7 @@ export const MainContact = () => {
   };
 
   return (
-    <section id="formulario" className="container mx-auto px-4 max-w-[1400px] pb-10 md:pb-24 lg:pb-48"
+    <section id="formulario" className="container mx-auto px-4 max-w-[1200px] pb-10 md:pb-24 lg:pb-48"
     data-aos="fade-up"
     data-aos-duration="800"  
     >
@@ -154,6 +154,8 @@ export const MainContact = () => {
                   required
                 />
                 <img
+                  width={10}
+                  height={10}
                   onClick={() => fechaInputRef.current?.showPicker()}
                   className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6"
                   src="vector/calendar.svg"
@@ -174,6 +176,8 @@ export const MainContact = () => {
                   required
                 />
                 <img
+                  width={10}
+                  height={10}
                   onClick={() => horarioInputRef.current?.showPicker()}
                   className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer w-6 h-6"
                   src="vector/watch.svg"

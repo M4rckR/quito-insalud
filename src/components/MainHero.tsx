@@ -5,7 +5,7 @@ import { CarouselHome } from "./ui/CarouselHome";
 
 export const MainHero = () => {
     return (
-      <section className="container mx-auto px-4 max-w-[1400px] mb-16 md:mb-32">
+      <section className="container mx-auto px-4 max-w-[1200px] mb-16 md:mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-y-6 gap-x-6">
           <div className="flex flex-col gap-4">
             <h2 className="text-center md:text-left text-[32px] md:text-4xl lg:text-5xl text-in-blue px-4 md:px-0 leading-8 md:leading-14">
@@ -28,6 +28,8 @@ export const MainHero = () => {
           <div className="hidden space-y-2 pl-4 pt-6 md:-mt-26 lg:-mt-32 md:block">
             <div className="flex items-start justify-center md:justify-start gap-2">
               <img
+                width={10}
+                height={10}
                 className="w-6 md:w-8"
                 src="vector/quotes.svg"
                 alt="quotes"
@@ -55,6 +57,8 @@ export const MainHero = () => {
      data-aos-duration="800">
           <div className="flex items-start justify-center gap-2">
             <img
+              width={10}
+              height={10}
               className="w-6 h-6 md:w-8"
               src="vector/quotes.svg"
               alt="quotes"

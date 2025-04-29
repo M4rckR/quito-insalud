@@ -9,7 +9,7 @@ export const Questions = () => {
   };
 
   return (
-    <section id="preguntas" className="container mx-auto px-4 max-w-[1440px] pb-32 lg:pb-48">
+    <section id="preguntas" className="container mx-auto px-4 max-w-[1200px] pb-32 lg:pb-48">
       <h2 className="text-center text-in-cyan-text text-2xl md:text-3xl lg:text-4xl font-medium mb-12" data-aos="zoom-in">
         Preguntas Frecuentes
       </h2>
