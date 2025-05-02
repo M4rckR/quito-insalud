@@ -2,13 +2,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
 
-const slides = ["images/item-1.png", "images/item-2.png"];
+const slides = ["images/item-1.png"];
 
 export const CarouselHome = () => {
   const [index, setIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, watchDrag: true },                    // sin drag, solo autoplay
+    { loop: true, watchDrag: false },                    // sin drag, solo autoplay
     [Autoplay({ delay: 5000, stopOnInteraction: false })]
   );
 
