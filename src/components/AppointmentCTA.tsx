@@ -8,7 +8,7 @@ export const AppointmentCTA = () => {
                 <h2 className="md:hidden text-xl md:text-2xl lg:text-3xl font-bold">Recupera tu confianza con un  tratamiento clínico <span className="hidden sm:block">eficaz y personalizado</span> </h2>
                 <p>Nuestro equipo de especialistas en Quito está listo para ayudarte a dar el primer paso hacia tu bienestar.</p>
             </div>
-            <a className="btn-wsp-quito flex justify-center bg-white gap-2 py-3 px-6 shadow-2xl rounded-4xl animate-[var(--animate-heartbeat)]" href="https://api.whatsapp.com/send/?phone=51957016010&text=Hola+%2AInsalud%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+NOSOTROS+https%3A%2F%2Finsalud.pe%2Fnosotros&type=phone_number&app_absent=0" target="_blank">
+            <a className="btn-wsp-quito flex justify-center bg-white gap-2 py-3 px-6 shadow-2xl rounded-4xl animate-[var(--animate-heartbeat)]" href="https://wa.link/ur5m3o" target="_blank">
                 <img src="icons/wspCTA.svg" alt="logo whatsapp" />
                 <p className="text-in-cyan-text font-medium">Agenda tu cita ahora</p>
             </a>
