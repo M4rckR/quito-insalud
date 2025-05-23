@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import TagManager from 'react-gtm-module';
 import { Bounce, ToastContainer } from 'react-toastify';
 import {useEffect} from "react";
-
+import {trackPageview} from "../lib/analytics.ts";
 
 export const MainLayout = () => {
     const location = useLocation()
@@ -19,6 +19,7 @@ export const MainLayout = () => {
                     title: document.title
                 }
             });
+            trackPageview(location.pathname)
         }
     }, [location]);
 

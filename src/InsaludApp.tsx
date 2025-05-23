@@ -14,6 +14,7 @@ const tagManagerArgs = {
 
 export const InsaludApp = () => {
 
+
   useEffect(() => {
     AOS.init({
       duration: 800, // duración de la animación en ms
