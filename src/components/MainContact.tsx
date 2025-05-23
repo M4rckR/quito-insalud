@@ -103,6 +103,7 @@ export const MainContact = () => {
           className="md:flex-1/2 bg-white rounded-xl p-6 flex flex-col gap-4 max-w-[550px] lg:max-w-[600px] shadow-[0_0_1000px_60px_rgba(214,245,241,1)]"
         >
           <form
+
             onSubmit={handleSubmit}
             className="ml-auto w-full flex flex-col gap-4"
           >
@@ -186,6 +187,7 @@ export const MainContact = () => {
               </div>
             </div>
             <button
+                id="form-quito-ondas"
               type="submit"
               className="cursor-pointer bg-in-orange text-center text-white font-medium py-3 rounded-2xl"
             >
