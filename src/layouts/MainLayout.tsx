@@ -1,11 +1,29 @@
-import { Outlet } from 'react-router-dom';
+import {Outlet, useLocation} from 'react-router-dom';
 import { HeaderMain } from '../components/HeaderMain';
 import { FooterMain } from '../components/FooterMain';
-import "react-toastify/dist/ReactToastify.css";              // ← Y asegúrate de tener el CSS
+import "react-toastify/dist/ReactToastify.css";
+import TagManager from 'react-gtm-module';
 import { Bounce, ToastContainer } from 'react-toastify';
+import {useEffect} from "react";
 
 
 export const MainLayout = () => {
+    const location = useLocation()
+
+    useEffect(() => {
+        if(location) {
+            TagManager.dataLayer({
+                dataLayer: {
+                    event: 'pageview',
+                    page: location.pathname,
+                    title: document.title
+                }
+            });
+        }
+    }, [location]);
+
+
+
   return (
     <div className='flex flex-col min-h-screen'>
         <HeaderMain/>
